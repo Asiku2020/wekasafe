@@ -1,3 +1,1 @@
-git add .python-version
-   git commit -m "Pin Python 3.11.9 to fix pydantic-core build on Render"
-   git push
+3.11.9
