@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Equipment - WekaSafe</title>
+    <style>
+        /* Reuse styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: white; color: #1f2937; }
+        nav { position: fixed; width: 100%; z-index: 1000; background: #064e3b; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; color: #e95b08; text-decoration: none; }
+        .back-btn { padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .back-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+
+        .page-header { padding: 8rem 2rem 4rem; text-align: center; background: linear-gradient(to bottom, rgba(249, 115, 22, 0.1), white); }
+        .page-header h1 { font-size: 3rem; margin-bottom: 1rem; color: #f97316; }
+        .page-header p { font-size: 1.25rem; color: #6b7280; max-width: 800px; margin: 0 auto; }
+
+        .category-section { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .category-title { font-size: 1.5rem; color: #1f2937; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 2rem; margin-top: 2rem; }
+        
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .product-card { background: #f9fafb; border-radius: 1rem; padding: 1.5rem; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s; }
+        .product-card:hover { border-color: #3b82f6; background: #f3f4f6; }
+        .product-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+        .product-card h4 { color: #1f2937; margin-bottom: 0.5rem; }
+        .product-card p { color: #6b7280; font-size: 0.9rem; }
+
+        .cta-box { text-align: center; padding: 4rem 2rem; background: #f3f4f6; margin-top: 4rem; }
+        .btn-primary { padding: 1rem 2rem; background: #3b82f6; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; }
+        
+        footer { text-align: center; padding: 2rem; background: #064e3b; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer p { color: #d1d5db; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">WekaSafe</a>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Safety Equipment Catalog</h1>
+        <p>High-quality Personal Protective Equipment (PPE) and emergency supplies complying with KEBS and international standards.</p>
+    </header>
+
+    <main class="category-section">
+        
+        <h2 class="category-title">Fire Safety Equipment</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-icon">🧯</span>
+                <h4>Fire Extinguishers</h4>
+                <p>CO2, Dry Powder, and Foam extinguishers in 6kg and 9kg sizes.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">🚨</span>
+                <h4>Smoke Detectors</h4>
+                <p>Optical and ionization smoke detectors with long-life batteries.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">🔥</span>
+                <h4>Fire Blankets</h4>
+                <p>Heavy-duty fiberglass blankets for kitchen and lab fires.</p>
+            </div>
+        </div>
+
+        <h2 class="category-title">Personal Protective Equipment (PPE)</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-icon">⛑️</span>
+                <h4>Safety Helmets</h4>
+                <p>Impact-resistant hard hats with adjustable straps.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">🥾</span>
+                <h4>Safety Boots</h4>
+                <p>Steel-toe boots with anti-slip and oil-resistant soles.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">🦺</span>
+                <h4>Reflective Vests</h4>
+                <p>High-visibility vests for construction and traffic safety.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">🧤</span>
+                <h4>Industrial Gloves</h4>
+                <p>Cut-resistant, chemical-resistant, and heat-proof gloves.</p>
+            </div>
+        </div>
+
+        <h2 class="category-title">Emergency & First Aid</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-icon">🚑</span>
+                <h4>First Aid Kits</h4>
+                <p>Fully stocked metal wall-mounted kits for offices and factories.</p>
+            </div>
+            <div class="product-card">
+                <span class="product-icon">⚠️</span>
+                <h4>Safety Signage</h4>
+                <p>Photoluminescent exit signs and hazard warnings.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="cta-box">
+        <h2 style="color:#1f2937; margin-bottom: 1rem;">Need a Quote?</h2>
+        <p style="color:#6b7280; margin-bottom: 2rem;">Select your items and contact us for bulk pricing and delivery.</p>
+        <a href="index.html#contact" class="btn-primary">Request Equipment Quote</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 WekaSafe Solutions.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - WekaSafe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a5f3f 0%, #0d3a26 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 450px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a5f3f 0%, #ff6b35 100%);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(26, 95, 63, 0.3);
+        }
+        
+        .logo h1 {
+            color: #1a5f3f;
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1a5f3f;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(26, 95, 63, 0.1);
+        }
+        
+        .error-message {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .error-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(26, 95, 63, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(26, 95, 63, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .security-icon {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-icon">W</div>
+            <h1>WekaSafe</h1>
+            <p>Admin Control Panel</p>
+        </div>
+        
+        {% if error %}
+        <div class="error-message">
+            <div class="error-icon">!</div>
+            <span>{{ error }}</span>
+        </div>
+        {% endif %}
+        
+        <form method="post" action="/admin/login">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="admin@wekasafe.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Enter your password">
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign In to Dashboard</button>
+        </form>
+        
+        <div class="security-badge">
+            <div class="security-icon">S</div>
+            <span>Secured with 256-bit encryption</span>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2026 WekaSafe Solutions. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

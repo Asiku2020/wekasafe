@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Requests - WekaSafe Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a5f3f 0%, #0d3a26 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-download {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-back {
+            background: white;
+            color: #1a5f3f;
+        }
+        
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .stats-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a5f3f;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .quotes-table-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .table-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .table-header h2 {
+            color: #1a5f3f;
+            font-size: 22px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #f8f9fa;
+        }
+        
+        th {
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        
+        tbody tr {
+            transition: all 0.2s;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .quote-id {
+            font-weight: 700;
+            color: #1a5f3f;
+            font-family: monospace;
+        }
+        
+        .service-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1565c0;
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .message-preview {
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .no-quotes {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        
+        .no-quotes-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1a5f3f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        
+        .email {
+            color: #1a5f3f;
+            font-weight: 600;
+        }
+        
+        .phone {
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>📋 Quote Requests</h1>
+                <p>Manage and export customer quote requests</p>
+            </div>
+            <div class="header-actions">
+                <a href="/admin/dashboard" class="btn btn-back">
+                    ← Back to Dashboard
+                </a>
+                <button onclick="downloadCSV()" class="btn btn-download">
+                    📥 Download CSV
+                </button>
+            </div>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">{{ quotes|length }}</div>
+                <div class="stat-label">Total Quotes</div>
+            </div>
+            <div class="stat-item">
+                <div class="user-info">
+                    <div class="user-avatar">{{ user.email[0].upper() }}</div>
+                    <div>
+                        <div style="font-weight: 600;">{{ user.email }}</div>
+                        <div style="font-size: 12px; color: #666;">{{ user.role|upper }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quotes-table-container">
+            <div class="table-header">
+                <h2>All Quote Requests</h2>
+            </div>
+            
+            {% if quotes %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Service</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for quote in quotes %}
+                    <tr>
+                        <td>
+                            <span class="quote-id">QT-{{ "%06d"|format(quote.id) }}</span>
+                        </td>
+                        <td>
+                            <strong>{{ quote.name }}</strong>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <span class="email">{{ quote.email }}</span>
+                                <span class="phone">{{ quote.phone }}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="service-badge">{{ quote.service }}</span>
+                        </td>
+                        <td>
+                            <div class="message-preview" title="{{ quote.message or 'No message' }}">
+                                {{ quote.message or '—' }}
+                            </div>
+                        </td>
+                        <td>
+                            <span class="timestamp">
+                                {{ quote.timestamp.strftime('%Y-%m-%d %H:%M') if quote.timestamp else 'N/A' }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="no-quotes">
+                <div class="no-quotes-icon">📋</div>
+                <h3>No Quote Requests Yet</h3>
+                <p>Quote requests will appear here when customers submit them.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        async function downloadCSV() {
+            try {
+                const response = await fetch('/admin/export/quotes', {
+                    method: 'GET',
+                    credentials: 'include' // Include cookies for authentication
+                });
+                
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        alert('Session expired. Please login again.');
+                        window.location.href = '/admin/login';
+                        return;
+                    }
+                    throw new Error('Download failed');
+                }
+                
+                // Get the CSV content
+                const blob = await response.blob();
+                
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'quotes_' + new Date().toISOString().split('T')[0] + '.csv';
+                document.body.appendChild(a);
+                a.click();
+                
+                // Cleanup
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Failed to download CSV. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

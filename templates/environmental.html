@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Consultancy - WekaSafe</title>
+    <style>
+        /* CORE STYLES FROM INDEX */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: white; color: #1f2937; }
+        
+        /* Nav */
+        nav { position: fixed; width: 100%; z-index: 1000; background: #064e3b; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; color: #ea550b; text-decoration: none; }
+        .back-btn { padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .back-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+
+        /* Page Specific Content */
+        .page-header { padding: 8rem 2rem 4rem; text-align: center; background: linear-gradient(to bottom, rgba(249, 115, 22, 0.1), white); }
+        .page-header h1 { font-size: 3rem; margin-bottom: 1rem; color: #f97316; }
+        .page-header p { font-size: 1.25rem; color: #6b7280; max-width: 800px; margin: 0 auto; }
+
+        .details-section { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        
+        .detail-card { 
+            background: #f9fafb; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 1rem; 
+            padding: 2rem; 
+            margin-bottom: 2rem;
+            display: flex; 
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .detail-icon { 
+            width: 60px; height: 60px; 
+            background: rgba(16, 185, 129, 0.1); 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            color: #10b981; flex-shrink: 0;
+        }
+
+        .detail-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937; }
+        .detail-content p { color: #6b7280; line-height: 1.6; margin-bottom: 1rem; }
+        .detail-list { list-style: none; }
+        .detail-list li { color: #374151; margin-bottom: 0.5rem; display: flex; gap: 10px; }
+        .checkmark { color: #10b981; }
+
+        .cta-box { text-align: center; padding: 4rem 2rem; background: #f3f4f6; margin-top: 4rem; }
+        .btn-primary { padding: 1rem 2rem; background: #10b981; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; }
+        
+        footer { text-align: center; padding: 2rem; background: #064e3b; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer p { color: #d1d5db; }
+        
+        @media(max-width: 768px) {
+            .detail-card { flex-direction: column; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">WekaSafe</a>
+            <a href="index.html" class="back-btn">
+                ← Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Environmental Consultancy</h1>
+        <p>Expert guidance to navigate NEMA regulations and ensure your projects are environmentally sustainable and legally compliant.</p>
+    </header>
+
+    <main class="details-section">
+        <div class="detail-card">
+            <div class="detail-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div class="detail-content">
+                <h3>ESIA (Impact Assessments)</h3>
+                <p>Before starting any major project, NEMA requires an Environmental & Social Impact Assessment. We handle the entire process from field data collection to report submission.</p>
+                <ul class="detail-list">
+                    <li><span class="checkmark">✓</span> Baseline environmental surveys</li>
+                    <li><span class="checkmark">✓</span> Stakeholder engagement & public participation</li>
+                    <li><span class="checkmark">✓</span> NEMA report submission and follow-up</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <div class="detail-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+            <div class="detail-content">
+                <h3>Environmental Audits</h3>
+                <p>For existing facilities, annual environmental audits are mandatory. We inspect your facility to identify risks and ensure ongoing compliance with the Environmental Management and Coordination Act.</p>
+                <ul class="detail-list">
+                    <li><span class="checkmark">✓</span> Initial Environmental Audits</li>
+                    <li><span class="checkmark">✓</span> Annual Self-Audits</li>
+                    <li><span class="checkmark">✓</span> Control Audits for specialized industries</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <div class="detail-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            </div>
+            <div class="detail-content">
+                <h3>Waste Management</h3>
+                <p>Proper waste disposal is critical to avoid fines. We help you design waste management plans and connect you with licensed waste handlers.</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="cta-box">
+        <h2 style="color:#1f2937; margin-bottom: 1rem;">Start Your Project Correctly</h2>
+        <p style="color:#6b7280; margin-bottom: 2rem;">Contact us today for a free consultation on your NEMA compliance status.</p>
+        <a href="index.html#contact" class="btn-primary">Request a Consultation</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 WekaSafe Solutions.</p>
+    </footer>
+</body>
+</html>

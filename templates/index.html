@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WekaSafe Solutions — Safety & Compliance Made Simple</title>
+  <meta name="description" content="WekaSafe Solutions — Environmental audits, DOSH-approved safety training, PPE & fire safety. Serving East Africa with certified compliance services." />
+  <meta name="keywords" content="safety, NEMA, environmental audit, DOSH, PPE, fire safety, training, Uganda, compliance" />
+  <meta name="author" content="WekaSafe Solutions" />
+  <link rel="canonical" href="https://www.wekasafesolutions.com/" />
+  
+  <meta property="og:site_name" content="WekaSafe Solutions" />
+  <meta property="og:title" content="WekaSafe Solutions — Safety & Compliance Made Simple" />
+  <meta property="og:description" content="Environmental audits, safety training, and PPE supply — certified, local expertise across East Africa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://your-domain.com/og-image.png" />
+  <meta property="og:url" content="https://www.wekasafesolutions.com/" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WekaSafe Solutions — Safety & Compliance Made Simple" />
+  <meta name="twitter:description" content="Environmental audits, safety training, and PPE supply — certified, local expertise across East Africa." />
+  <meta name="twitter:image" content="https://your-domain.com/og-image.png" />
+
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f172a'/><text x='50' y='58' font-size='48' text-anchor='middle' fill='%2310b981' font-family='Arial'>W</text></svg>">
+
+  <script>
+    window._wekasafeAnalytics = window._wekasafeAnalytics || function(){(window._wekasafeAnalytics.q=window._wekasafeAnalytics.q||[]).push(arguments)};
+    _wekasafeAnalytics('init','YOUR-ANALYTICS-ID');
+  </script>
+
+  <style>
+    /* --- DESIGN VARIABLES --- */
+    :root {
+      /* Branding Colors */
+      --primary: #10b981;       /* Safety Emerald */
+      --primary-dark: #047857;  /* Deep Emerald */
+      --accent: #f59e0b;        /* Warning Amber */
+      
+      /* --- THEME COLORS --- */
+      --bg-body: #ffffff;       /* Pure White Main Background */
+      --bg-surface: #f8fafc;    /* Very Light Gray for alternating sections */
+      --bg-card: #ffffff;       /* White Cards */
+      
+      --nav-footer-bg: #064e3b; /* Dark Green (Emerald 900) */
+      --header-text: #ea580c;   /* Vibrant Orange */
+      
+      /* Typography */
+      --text-main: #1e293b;     /* Dark Slate (Main Body Text) */
+      --text-muted: #64748b;    /* Slate Gray (Secondary Text) */
+      --text-nav: #f1f5f9;      /* Light White (For Nav/Footer) */
+      
+      /* Layout */
+      --max-width: 1280px;
+      --radius: 12px;
+      --nav-height: 80px;
+    }
+
+    /* --- RESET & BASE --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg-body); 
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header Color (Orange) */
+    h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; color: var(--header-text); }
+    h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); letter-spacing: -0.02em; margin-bottom: 1rem; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+    h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+    
+    p.lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 65ch; }
+    .text-muted { color: var(--text-muted); }
+
+    /* --- NAVIGATION (Dark Green) --- */
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: var(--nav-height);
+      display: flex; align-items: center;
+      background: var(--nav-footer-bg); /* Dark Green */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 9999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    
+    .logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: #fff; text-decoration: none; }
+    
+    .logo-wrapper {
+      background: #fff; padding: 4px; border-radius: 6px; display: flex; align-items: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .logo img { height: 38px; width: auto; display: block; }
+    
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--text-nav); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--accent); outline: none; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 99px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4); }
+    
+    /* Ghost button adapts to background */
+    .btn-ghost { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.2); color: var(--text-main); }
+    .btn-ghost:hover { background: rgba(0,0,0,0.1); border-color: var(--primary); color: var(--primary); }
+    
+    .mobile-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.5rem; padding: 0.5rem; cursor: pointer; }
+
+    /* --- HERO (UPDATED: No Overlay) --- */
+    .hero { min-height: 100vh; padding-top: var(--nav-height); display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-slider { position: absolute; inset: 0; z-index: -3; }
+    
+    .hero-slide { 
+        position: absolute; inset: 0;  
+        background-size: cover; background-position: center; 
+        /* UPDATED: Removed brightness filter to show full color */
+        opacity: 0; 
+        animation: slide 28s infinite; 
+    }
+    
+    .slide-1 { background-image: url('/static/Pics _4.jpg'); animation-delay: 0s; }
+    .slide-2 { background-image: url('/static/Pics _2.jpg'); animation-delay: 4s; }
+    .slide-3 { background-image: url('/static/Pics _7.jpg'); animation-delay: 8s; }
+    .slide-4 { background-image: url('/static/Pics _10.jpg'); animation-delay: 15s; }
+    .slide-5 { background-image: url('/static/Pics _17.jpg'); animation-delay: 22s; }
+    .slide-6 { background-image: url('/static/Pics _14.jpg'); animation-delay: 28s; }
+
+    @keyframes slide{ 0%{opacity:0;transform:scale(1)} 5%{opacity:1} 33%{opacity:1} 38%{opacity:0;transform:scale(1.05)} 100%{opacity:0} }
+    
+    /* UPDATED: Hero Content Box (Glassy White) */
+    .hero-content { 
+        max-width: 800px; 
+        position: relative; 
+        z-index: 2; 
+        /* Glassy White Card Background */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255,255,255,0.4);
+    }
+    
+    /* Hero Text Colors (Dark text on white card) */
+    .hero h1 { color: var(--header-text); text-shadow: none; }
+    .hero p.lead { color: var(--text-main); text-shadow: none; font-weight: 500; }
+    .hero .gradient-text { color: var(--primary); }
+    
+    .badge { display: inline-block; padding: 0.5rem 1rem; background: rgba(16,185,129,0.1); border-radius: 99px; color: var(--primary-dark); font-weight: 700; margin-bottom: 1.5rem; border: 1px solid rgba(16,185,129,0.3); text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
+    
+
+    /* --- TRUST STRIP --- */
+    .trust-strip { 
+        border-bottom: 1px solid #e2e8f0; 
+        background: #fff; 
+        padding: 2.5rem 0; 
+        margin-top: 0; 
+        margin-bottom: 2rem; 
+        overflow: hidden; 
+        position: relative; 
+        z-index: 10; 
+    }
+    .trust-logos-wrapper { position: relative; width: 100%; height: 80px; display: flex; align-items: center; }
+    .trust-logos { display: flex; gap: 5rem; align-items: center; position: absolute; animation: marquee 30s linear infinite; white-space: nowrap; padding-right: 5rem; left: 0; }
+    .trust-logos:hover { animation-play-state: paused; }
+    .trust-logos img { height: 80px; width: auto; object-fit: contain; transition: transform 0.3s ease; flex-shrink: 0; background: #ffffff; padding: 12px 20px; border-radius: 8px; border: 1px solid #f1f5f9; }
+    .trust-logos img:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* --- SECTIONS --- */
+    section { padding: 6rem 0; }
+    .bg-surface { background-color: var(--bg-surface); }
+    
+    .gradient-text { color: var(--header-text); }
+
+    /* --- ABOUT --- */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-slider-container { position: relative; height: 450px; border-radius: var(--radius); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .about-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out; }
+    .about-slide.active { opacity: 1; }
+    
+    .stat-row { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+    .stat-box h3 { color: var(--primary); font-size: 2rem; margin-bottom: 0.25rem; }
+    .stat-box div { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+
+    /* --- SERVICES --- */
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .service-card { background: var(--bg-card); padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+    .service-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+    .service-list { margin-top: 1.5rem; list-style: none; padding-left: 0; color: var(--text-muted); }
+    .service-list li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; }
+    .service-list li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+
+    /* --- GALLERY --- */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .gallery-item { height: 250px; border-radius: 12px; overflow: hidden; position: relative; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay { position: absolute; inset: auto 0 0 0; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff; }
+
+    /* --- TESTIMONIALS --- */
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .test-card { background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; border-top: 4px solid var(--primary); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+    .stars { color: var(--accent); margin-bottom: 1rem; letter-spacing: 2px; }
+
+    /* --- CONTACT --- */
+    .contact-wrap { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); max-width: 900px; margin: 0 auto; color: #fff; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    
+    .form-control { width: 100%; padding: 0.9rem; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; color: var(--text-main); font-family: inherit; transition: border-color 0.2s; }
+    .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16,185,129,0.1); }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .full-width { grid-column: 1/-1; }
+    .consent { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* --- TEAM SECTION --- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .team-grid-admin {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+    }
+    .team-member-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .team-member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+    }
+    .member-photo {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary); 
+    }
+    .team-member-card h4 {
+      margin-bottom: 0.25rem;
+      color: var(--header-text);
+      font-size: 1.25rem;
+    }
+    .team-member-card p {
+      color: var(--primary); 
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* --- FOOTER (Dark Green) --- */
+    footer { padding: 4rem 0 2rem; margin-top: 4rem; background: var(--nav-footer-bg); color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+    .footer-col h4 { margin-bottom: 1.25rem; font-size: 1.1rem; color: var(--accent); }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col li { margin-bottom: 0.75rem; }
+    .footer-col a { color: #e2e8f0; text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; text-decoration: underline; }
+    .footer-bottom { text-align: center; color: #94a3b8; font-size: 0.9rem; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+
+    /* --- MODALS (Clean White) --- */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 99999; padding: 1rem; }
+    .modal { background: #fff; padding: 2rem; border-radius: 16px; max-width: 700px; width: 100%; border: 1px solid #e2e8f0; max-height: 90vh; overflow-y: auto; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .modal.show { display: flex; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+    .modal h3 { color: var(--header-text); }
+    .close-btn { background: none; border: 0; color: #64748b; font-size: 1.5rem; cursor: pointer; transition: color 0.2s; }
+    .close-btn:hover { color: var(--primary); }
+    
+    /* FAQ Details */
+    details { border: 1px solid #e2e8f0 !important; background: #fff; }
+    summary { color: var(--primary); }
+
+    /* --- COOKIE BANNER --- */
+    .cookie-banner { position: fixed; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; background: #fff; color: var(--text-main); padding: 1.25rem; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; gap: 1.5rem; align-items: center; justify-content: space-between; z-index: 9999; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-width: 900px; margin: 0 auto; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width:1024px){ .gallery-grid { grid-template-columns: repeat(2,1fr); } .about-grid { grid-template-columns: 1fr; } h1 { font-size: 2.8rem; } }
+    @media (max-width:768px){ 
+      .nav-links { display: none; } .mobile-toggle { display: block; } 
+      .form-grid { grid-template-columns: 1fr; } 
+      .gallery-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cookie-banner { flex-direction: column; align-items: flex-start; }
+    }
+    
+    /* Focus outline for accessibility */
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "WekaSafe Solutions",
+    "url": "https://www.wekasafe.com",
+    "logo": "https://your-domain.com/logo.png",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+256700123456",
+        "contactType": "customer service",
+        "areaServed": "UGA"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/wekasafe",
+      "https://www.facebook.com/wekasafe"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="WekaSafe home">
+        <div class="logo-wrapper">
+            <img src="/static/IMG-20251204-WA0009.jpg" alt="WekaSafe logo">
+        </div>
+        <span>WekaSafe Solutions</span>
+      </a>
+
+      <div class="nav-links" role="menubar" aria-label="Primary">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#gallery" role="menuitem">Gallery</a>
+        <a href="#testimonials" role="menuitem">Reviews</a>
+        <a href="#team" role="menuitem">Team</a>
+        <a href="#contact" role="menuitem" class="btn btn-primary" style="background:var(--accent); color:#000;">Get a Quote</a>
+      </div>
+
+      <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileMenu" id="mobileToggle">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-slider" aria-hidden="true">
+        <div class="hero-slide slide-1" role="img" aria-label="Industrial safety scene"></div>
+        <div class="hero-slide slide-2" role="img" aria-label="Engineer with helmet"></div>
+        <div class="hero-slide slide-3" role="img" aria-label="Fire safety training"></div>
+        <div class="hero-slide slide-4" role="img" aria-label="Fire safety training"></div>
+        <div class="hero-slide slide-5" role="img" aria-label="Fire safety training"></div>
+        <div class="hero-slide slide-6" role="img" aria-label="Fire safety training"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="badge">✓ #1 Safety Provider in East Africa</div>
+        <h1 id="hero-heading">Total Safety <span class="gradient-text">Compliance Solutions</span></h1>
+        <p class="lead">From NEMA environmental audits to DOSH-approved fire safety training and premium PPE supply. We protect your workforce and your business with uncompromising standards.</p>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap">
+          <a href="#services" class="btn btn-primary" role="button">Explore Services</a>
+          <button class="btn btn-ghost" data-open-modal="bookModal">Book Consultation</button>
+          <button class="btn btn-ghost" data-open-modal="reportModal" style="border-color:var(--accent); color:var(--accent);">Report an Incident ⚠️</button>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="trust-strip" role="contentinfo">
+      <div class="container">
+        <p style="text-align:center; color:var(--text-muted); letter-spacing:1px; font-weight:700; margin-bottom:1.5rem; font-size:0.85rem;">TRUSTED BY LEADING ORGANIZATIONS</p>
+        <div class="trust-logos-wrapper"> 
+            <div class="trust-logos">
+              <img src="/static/arua.jpg" alt="Arua City">
+              <img src="/static/total-logo.png.png" alt="Total Energies">
+              <img src="/static/uganda-breweries-logo.png.png" alt="Uganda Breweries">
+              <img src="/static/civil-aviation-logo.png.png" alt="Civil Aviation Authority">
+              <img src="/static/coca-cola-logo.png.png" alt="Coca-Cola">
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section id="about" aria-labelledby="about-heading" class="container">
+      <div class="about-grid" role="region">
+        <div class="about-slider-container" aria-hidden="false">
+          <img class="about-slide active" src="/static/Pics _14.jpg" alt="Construction safety - PPE and workers">
+          <img class="about-slide" src="/static/Pics _36.jpg" alt="Fire extinguisher inspection">
+          <img class="about-slide" src="/static/Pics _17.jpg" alt="Safety meeting - team training">
+          <img class="about-slide" src="/static/Pics _27.jpg" alt="Safety meeting - team training">
+          <img class="about-slide" src="/static/pik (1).jpg" alt="Safety meeting - team training">
+          <img class="about-slide" src="/static/pik (2).jpg" alt="Safety meeting - team training">
+        </div>
+
+        <div>
+          <h2 id="about-heading">We Don't Just Sell Safety, <span class="gradient-text">We Ensure Compliance.</span></h2>
+          <p class="text-muted" style="margin-bottom:1.5rem;">WekaSafe Solutions is your strategic partner in navigating the regulatory landscape in East Africa. We combine certified training, robust audits, and reliable PPE supply to reduce workplace incidents and protect your operations.</p>
+          
+          <p class="text-muted">Our team consists of NEMA-certified environmental experts and DOSH-accredited safety trainers who understand the local industrial challenges. We ensure your documentation is audit-ready and your team is emergency-ready.</p>
+
+          <div class="stat-row">
+            <div class="stat-box">
+              <h3>500+</h3>
+              <div>Projects completed</div>
+            </div>
+            <div class="stat-box">
+              <h3>100%</h3>
+              <div>NEMA compliant</div>
+            </div>
+            <div class="stat-box">
+              <h3>24/7</h3>
+              <div>Emergency response</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-heading" class="bg-surface">
+      <div class="container">
+        <div style="max-width:900px; margin:0 auto; text-align:center; padding-bottom:3rem;">
+          <h2 id="services-heading">Comprehensive <span class="gradient-text">Safety Services</span></h2>
+          <p class="text-muted">Professional solutions tailored to your industry standards. Click a service to view details or request a tailored proposal.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card" tabindex="0" aria-labelledby="svc1">
+            <span class="service-icon">🌱</span>
+            <h3 id="svc1">Environmental Consultancy</h3>
+            <p class="text-muted">Full-spectrum environmental services to ensure your projects meet national standards. We handle the paperwork so you can focus on the build.</p>
+            <ul class="service-list">
+              <li>ESIA Studies & NEMA submissions</li>
+              <li>Annual environmental compliance audits</li>
+              <li>Waste & effluent management plans</li>
+              <li>Sustainability reporting</li>
+            </ul>
+            <div style="margin-top:1.5rem">
+              <a class="btn btn-ghost" href="/environmental.html" aria-label="View Environmental Consultancy details">View Details</a>
+            </div>
+          </article>
+          <article class="service-card" tabindex="0" aria-labelledby="svc2">
+            <span class="service-icon">👨‍🚒</span>
+            <h3 id="svc2">Safety Training</h3>
+            <p class="text-muted">DOSH-accredited courses designed to empower your workforce. Our hands-on approach ensures skills are retained and applied correctly.</p>
+            <ul class="service-list">
+              <li>Fire Safety & Marshal Certification</li>
+              <li>First Aid / BLS training & certification</li>
+              <li>Site-specific induction & toolbox talks</li>
+              <li>Occupational Health & Safety (OHS)</li>
+            </ul>
+            <div style="margin-top:1.5rem">
+              <a class="btn btn-ghost" href="/training.html">View Courses</a>
+            </div>
+          </article>
+          <article class="service-card" tabindex="0" aria-labelledby="svc3">
+            <span class="service-icon">⛑️</span>
+            <h3 id="svc3">Equipment Supply</h3>
+            <p class="text-muted">High-quality PPE, firefighting equipment, and safety signage. All our products are certified and tested to meet rigorous ISO industry standards.</p>
+            <ul class="service-list">
+              <li>Fire extinguishers & annual servicing</li>
+              <li>PPE: boots, helmets, hi-vis, gloves</li>
+              <li>Emergency exit signage & lighting</li>
+              <li>First Aid Kits & medical supplies</li>
+            </ul>
+            <div style="margin-top:1.5rem">
+              <a class="btn btn-ghost" href="/equipment.html">View Catalog</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <h2 id="gallery-heading" style="text-align:center; margin-bottom:3rem;">Safety <span class="gradient-text">In Action</span></h2>
+        <div class="gallery-grid" aria-hidden="false">
+          <div class="gallery-item" role="img" aria-label="Personal protective equipment">
+            <img src="/static/safety (6).jpg" alt="Safety vest and helmet">
+            <div class="gallery-overlay"><strong>Quality PPE Supply</strong></div>
+          </div>
+          <div class="gallery-item" role="img" aria-label="Fire extinguisher storage">
+            <img src="/static/pik.jpg" alt="Fire extinguisher wall">
+            <div class="gallery-overlay"><strong>Fire Safety Systems</strong></div>
+          </div>
+          <div class="gallery-item" role="img" aria-label="Construction site audit">
+            <img src="/static/safety (8).jpg" alt="Construction site audit">
+            <div class="gallery-overlay"><strong>Site Safety Audits</strong></div>
+          </div>
+          <div class="gallery-item" role="img" aria-label="Training session">
+            <img src="/static/staff (2).jpg" alt="Training session">
+            <div class="gallery-overlay"><strong>Staff Training</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" aria-labelledby="test-heading" class="bg-surface">
+      <div class="container">
+        <h2 id="test-heading" style="text-align:center; margin-bottom:3rem;">What Our <span class="gradient-text">Clients Say</span></h2>
+        <div class="test-grid" role="list">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="text-muted" style="font-style:italic; margin-bottom:1rem;">"WekaSafe handled our NEMA audit professionally. They identified risks we hadn't seen and helped us fix them before the inspection."</p>
+            <strong>- John K., Site Manager</strong>
+          </div>
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="text-muted" style="font-style:italic; margin-bottom:1rem;">"The fire safety training was practical, engaging, and gave our entire team confidence in an emergency. Highly recommended."</p>
+            <strong>- Sarah T., Operations Director</strong>
+          </div>
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="text-muted" style="font-style:italic; margin-bottom:1rem;">"Reliable supply of certified PPE equipment. Always on time and excellent customer service. Our go-to safety partner."</p>
+            <strong>- David O., Procurement Lead</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq-resources" aria-labelledby="faq-heading" class="container">
+      <div style="max-width:900px; margin:0 auto; text-align:center; padding-bottom:3rem;">
+          <h2 id="faq-heading">FAQ & <span class="gradient-text">Resources</span></h2>
+          <p class="text-muted">Frequently asked questions and useful documents to help you manage site compliance.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+        <div>
+          <h3>Popular Questions</h3>
+          <details style="padding:1rem; border-radius:8px; margin-bottom:1rem;">
+            <summary style="font-weight:600; cursor:pointer;">What permits do I need for a new factory?</summary>
+            <p class="text-muted" style="padding-top:1rem;">A new factory typically requires a NEMA permit for environmental compliance (e.g., EIA), a DOSH license for occupational health and safety, and local council permits. We assist with all these submissions.</p>
+          </details>
+          <details style="padding:1rem; border-radius:8px; margin-bottom:1rem;">
+            <summary style="font-weight:600; cursor:pointer;">How often should fire extinguishers be serviced?</summary>
+            <p class="text-muted" style="padding-top:1rem;">In line with regional standards, fire extinguishers require annual maintenance (servicing and testing) and typically a hydrostatic test every five years.</p>
+          </details>
+          <details style="padding:1rem; border-radius:8px; margin-bottom:1rem;">
+            <summary style="font-weight:600; cursor:pointer;">Do you offer customized safety training?</summary>
+            <p class="text-muted" style="padding-top:1rem;">Yes, we specialize in site-specific safety training, tailoring the content and practical demonstrations to your unique industrial environment and equipment.</p>
+          </details>
+        </div>
+
+        <div>
+          <h3>Download Center</h3>
+          <p class="text-muted" style="margin-bottom:1.5rem;">Quickly download essential safety documents and templates for your site inspection.</p>
+          
+          <ul class="text-muted" style="list-style:none; padding-left:0;">
+            <li style="margin-bottom:1rem; display:flex; gap:0.5rem; align-items:center;">
+                <span style="font-size:1.2rem;">📄</span> 
+                <a href="/documents/WekaSafe-Incident-Report.docx" 
+                   download="WekaSafe-Incident-Report.docx" 
+                   target="_blank" 
+                   style="color:var(--text-main); text-decoration:underline; cursor:pointer;">
+                   Incident Report Template (DOCX)
+                </a>
+                <span style="font-size:0.8rem; color:var(--text-muted);"></span>
+            </li>
+            <li style="display:flex; gap:0.5rem; align-items:center;">
+                <span style="font-size:1.2rem;">📋</span> 
+                <a href="/documents/WekaSafe-PPE-Checklist.pdf" 
+                   download="WekaSafe-PPE-Checklist.pdf" 
+                   target="_blank" 
+                   style="color:var(--text-main); text-decoration:underline; cursor:pointer;">
+                   PPE Inspection Checklist (PDF)
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading" class="bg-surface" style="padding: 4rem 0;">
+      <div class="container" style="text-align:center;">
+        <h2 id="contact-heading">Ready to <span class="gradient-text">Start Your Compliance?</span></h2>
+        <p class="text-muted">Click below to open the consultation form and get your personalized quote in under 24 hours.</p>
+        <button class="btn btn-primary" data-open-modal="bookModal" style="margin-top:1.5rem;">Open Quote Form Now</button>
+      </div>
+    </section>
+
+
+  <section id="team" aria-labelledby="team-heading" class="bg-surface">
+    <div class="container">
+      <div style="max-width:900px; margin:0 auto; text-align:center; padding-bottom:1rem;">
+        <h2 id="team-heading">Meet Our <span class="gradient-text">Safety Experts</span></h2>
+        <p class="text-muted">A dedicated team of NEMA and DOSH certified professionals committed to your compliance.</p>
+      </div>
+      
+      <div class="team-grid team-grid-admin">
+
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/jimmy.jpg" alt="Photo of Admin Staff Member 1">
+          <h4>ADMIN STAFF NAME 1</h4>
+          <p>Administrative Role</p>
+        </div>
+
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/elly.jpg" alt="Photo of Admin Staff Member 2">
+          <h4>ADMIN STAFF NAME 2</h4>
+          <p>Administrative Role</p>
+        </div>
+
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/admin-placeholder-3.jpg" alt="Photo of Admin Staff Member 3">
+          <h4>ADMIN STAFF NAME 3</h4>
+          <p>Administrative Role</p>
+        </div>
+
+      </div>
+
+      <div class="team-grid">
+        
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/brenda.jpg" alt="Photo of Staff Member Name 1">
+          <h4>YOKOKO CHRISTINE</h4>
+          <p>Chief Safety Officer (CSO)</p>
+        </div>
+
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/patrick.jpg" alt="Photo of Staff Member Name 1">
+          <h4>CANDIRU BETTY</h4>
+          <p>Environmental Field Officer (EFO)</p>
+        </div>
+
+        
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/ppf.jpg" alt="Photo of Staff Member Name 3">
+          <h4>MRS EMILY AYIKORU</h4>
+          <p>Lead Training Specialist</p>
+        </div>
+        
+        <div class="team-member-card">
+          <img class="member-photo" src="/static/elly.jpg" alt="Photo of Staff Member Name 3">
+          <div class="ceo.jpg" aria-hidden="true"></div>
+          <h4>AZIO STEPHEN</h4>
+          <p>PPE Procurement Manager</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#top" class="logo" aria-label="WekaSafe home" style="margin-bottom: 1.5rem;">
+          <div class="logo-wrapper">
+              <img src="/static/IMG-20251204-WA0009.jpg" alt="WekaSafe logo">
+          </div>
+          <span>WekaSafe Solutions</span>
+        </a>
+        <p style="color:#cbd5e1;">Certified compliance and safety solutions across East Africa.
+           Protecting your people, reputation, and bottom line.</p>
+        <div style="margin-top:1.5rem;">
+          <a href="info@wekasafe.com" class="btn btn-ghost" 
+          style="padding:0.5rem 1rem; font-size:0.9rem; color:#fff;">Email Us</a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+          <li><a href="#contact">Contact & Quote</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><button class="btn-ghost" style="border:none; background:none; padding:0; color:#e2e8f0; text-align:left;" data-open-modal="privacyModal">Privacy Policy</button></li>
+
+          <li><button class="btn-ghost" style="border:none; background:none; padding:0; color:#e2e8f0; text-align:left;" data-open-modal="reportModal">Report an Incident</button></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://linkedin.com/company/wekasafe" target="_blank">LinkedIn</a></li>
+          <li><a href="https://facebook.com/wekasafe" target="_blank">Facebook</a></li>
+          <li><a href="tel:+256700123456">+256 700 123 456</a></li>
+          <li><a href="asikuderick10@gmail.ccom"><span class="__cf_email__" data-cfemail="2a43444c456a5d4f414b594b4c4f04494547">info@wekasafesolutions.com</span></a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      &copy; 2026 WekaSafe Solutions. All rights reserved.
+    </div>
+  </footer>
+
+
+  <div class="modal-backdrop" id="reportModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="color:var(--accent);">Report a Safety Incident</h3>
+        <button class="close-btn" data-close-modal="reportModalBackdrop" aria-label="Close">✕</button>
+      </div>
+      <div style="color:var(--text-main); padding:1rem 0;">
+          <p class="text-muted" style="text-align:center; margin-bottom:1.5rem;">Use this form to quickly report an accident, near-miss, or safety concern. All submissions are confidential.</p>
+          <form id="incidentForm" class="form-grid" style="align-items:flex-start;">
+            <div>
+              <label for="incidentName">Your Name (Optional)</label>
+              <input id="incidentName" class="form-control" type="text" placeholder="John Doe" name="reporter_name">
+            </div>
+            <div>
+              <label for="incidentEmail">Email</label>
+              <input id="incidentEmail" class="form-control" type="email" placeholder="john@company.com" name="contact">
+            </div>
+            <div class="full-width">
+              <label for="incidentLocation">Location of Incident</label>
+              <input id="incidentLocation" class="form-control" type="text" placeholder="Site X, Block 3" required name="location">
+            </div>
+            <div class="full-width">
+              <label for="incidentSeverity">Severity Level</label>
+              <select id="incidentSeverity" class="form-control" required name="severity">
+                <option value="" disabled selected>Select Severity</option>
+                <option value="Minor">Minor (First Aid only)</option>
+                <option value="Serious">Serious (Hospitalization required)</option>
+                <option value="Near Miss">Near Miss (No injury, but potential for harm)</option>
+                <option value="Safety Concern">General Safety Concern</option>
+              </select>
+            </div>
+            <div class="full-width">
+              <label for="incidentDetails">Incident Description</label>
+              <textarea id="incidentDetails" rows="4" class="form-control" placeholder="Describe what happened, when, and who was involved." required name="description"></textarea>
+            </div>
+            <div class="full-width">
+              <label for="incidentAttachment">Attach Photos / Documents (Optional)</label>
+              <input id="incidentAttachment" type="file" class="form-control" style="padding:0.7rem; background:#f1f5f9;" name="files" multiple>
+            </div>
+
+            <div class="full-width">
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1rem; background:var(--accent);">Submit Report</button>
+            </div>
+            <div class="full-width" class="text-muted" style="text-align:center; font-size:0.9rem">All sensitive reports are handled by our dedicated HSE team.</div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="bookModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
+      <div class="modal-header">
+        <h3 id="bookModalTitle" style="color:var(--primary);">Book Consultation / Get Quote</h3>
+        <button class="close-btn" data-close-modal="bookModalBackdrop" aria-label="Close">✕</button>
+      </div>
+      <div style="color:var(--text-main); padding:1rem 0;">
+          <p class="text-muted" style="text-align:center; margin-bottom:1.5rem;">Fill the form below and our safety experts will contact you within 24 hours.</p>
+          <form id="quoteForm" class="form-grid" aria-describedby="quote-desc">
+            <div>
+              <label for="qname">Full Name</label>
+              <input id="qname" class="form-control" type="text" placeholder="John Doe" required name="name">
+            </div>
+            <div>
+              <label for="qemail">Email Address</label>
+              <input id="qemail" class="form-control" type="email" placeholder="john@company.com" required name="email">
+            </div>
+            <div>
+              <label for="qphone">Phone Number</label>
+              <input id="qphone" class="form-control" type="tel" placeholder="+256 700 123 456" required name="phone">
+            </div>
+            <div>
+              <label for="qservice">Service Interest</label>
+              <select id="qservice" class="form-control" aria-label="Service interest" name="service">
+                <option>Environmental Audit</option>
+                <option>Safety Training</option>
+                <option>Equipment Supply</option>
+                <option>Risk Assessment</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="full-width">
+              <label for="qmessage">Message / Project Details</label>
+              <textarea id="qmessage" rows="4" class="form-control" placeholder="Describe your needs..." name="message"></textarea>
+            </div>
+
+            <div class="full-width" style="display:flex; gap:0.75rem; align-items:flex-start">
+              <input id="qconsent" type="checkbox" required aria-required="true" style="margin-top:4px;">
+              <label for="qconsent" class="consent">I consent to the storage and processing of my contact details for the purpose of responding to this inquiry. See <button type="button" class="btn-ghost" id="viewPrivacyFromQuote" style="padding:0.2rem 0.6rem; font-size:0.8rem; border-radius:4px;">Privacy Policy</button></label>
+            </div>
+
+            <div class="full-width">
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1rem;">Send Request</button>
+            </div>
+            <div class="full-width" id="quote-desc" class="text-muted" style="text-align:center; font-size:0.9rem">Typical response time: within 24 hours (business days)</div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="privacyModalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+      <div class="modal-header">
+        <h3 id="privacyModalTitle">Privacy Policy</h3>
+        <button class="close-btn" data-close-modal="privacyModalBackdrop" aria-label="Close">✕</button>
+      </div>
+      <p class="text-muted">
+        WekaSafe Solutions respects your privacy. We only collect the necessary data provided in forms for the purpose of service inquiry, incident reporting, and improving our services. We do not sell or share your personal information with third parties outside of what is required by law or necessary to fulfill a service you requested. Incident reports are kept confidential and are used solely for internal safety analysis and communication with relevant authorities (like DOSH/NEMA) if required by Ugandan law. By submitting a form, you agree to this policy.
+      </p>
+    </div>
+  </div>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie Consent">
+    <p class="text-muted" style="margin:0;">We use cookies to ensure you get the best experience on our website. <button class="btn-ghost" data-open-modal="privacyModal" style="padding:0.2rem 0.6rem; font-size:0.9rem; border-radius:4px; margin-left:0.5rem;">Privacy Policy</button></p>
+    <button class="btn btn-primary" id="acceptCookies" style="white-space:nowrap; background:var(--primary);">Accept & Continue</button>
+  </div>
+
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const API_BASE = window.location.origin; // Production backend URL (same-origin)
+
+    // --- MODAL LOGIC ---
+
+    // Helper function to show modals (updated to use consistent ID naming convention)
+    function showModal(backdropId) {
+      const backdrop = document.getElementById(backdropId + 'Backdrop'); 
+      if(!backdrop) return;
+      backdrop.classList.add('show'); 
+      backdrop.style.display = 'flex'; 
+      document.body.style.overflow = 'hidden'; // Prevents scrolling on body
+      backdrop.setAttribute('aria-hidden','false');
+    }
+
+    // Helper function to close modals
+    function closeModal(backdropId) {
+      const backdrop = document.getElementById(backdropId);
+      if(!backdrop) return;
+      backdrop.classList.remove('show'); 
+      backdrop.style.display = 'none';
+      document.body.style.overflow = ''; // Re-enables scrolling on body
+      backdrop.setAttribute('aria-hidden','true');
+    }
+
+    // Listener for all open buttons (e.g., data-open-modal="reportModal")
+    document.querySelectorAll('[data-open-modal]').forEach(button => {
+      button.addEventListener('click', () => {
+        showModal(button.getAttribute('data-open-modal'));
+      });
+    });
+
+    // Listener for all close buttons (e.g., data-close-modal="reportModalBackdrop")
+    document.querySelectorAll('[data-close-modal]').forEach(button => {
+      button.addEventListener('click', () => {
+        closeModal(button.getAttribute('data-close-modal'));
+      });
+    });
+    
+    // Close modal when backdrop is clicked
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+        backdrop.addEventListener('click', function(e) {
+            // Only close if the click occurred directly on the backdrop, not its children
+            if (e.target === this) {
+                closeModal(this.id);
+            }
+        });
+    });
+
+
+    // --- HERO SLIDER LOGIC ---
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            // Logic handled by CSS animations for opacity and transform
+        });
+    }
+
+    // --- ABOUT SLIDER LOGIC ---
+    let currentAboutSlide = 0;
+    const aboutSlides = document.querySelectorAll('.about-slide');
+    
+    function showAboutSlide(index) {
+        aboutSlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+        });
+        if (aboutSlides[index]) {
+            aboutSlides[index].classList.add('active');
+        }
+    }
+    
+    function nextAboutSlide() {
+        currentAboutSlide = (currentAboutSlide + 1) % aboutSlides.length;
+        showAboutSlide(currentAboutSlide);
+    }
+
+    // Initial call to start the about slider
+    if (aboutSlides.length > 0) {
+        showAboutSlide(0);
+        setInterval(nextAboutSlide, 5000); // Change slide every 5 seconds
+    }
+
+
+    // --- COOKIE BANNER LOGIC ---
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookiesBtn = document.getElementById('acceptCookies');
+    
+    // Function to check if cookies have been accepted
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    
+    // Function to set the cookie
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+    }
+
+    // Check on load
+    if (getCookie('wekasafe_cookies_accepted') !== 'true') {
+      cookieBanner.style.display = 'flex';
+    } else {
+      cookieBanner.style.display = 'none';
+    }
+
+    // Handle acceptance
+    acceptCookiesBtn.addEventListener('click', () => {
+      setCookie('wekasafe_cookies_accepted', 'true', 365);
+      cookieBanner.style.display = 'none';
+    });
+
+
+    // --- FORM SUBMISSION LOGIC ---
+
+    // Quote Form Submission Logic
+    document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const original = submitBtn.innerText;
+      
+      const formData = {
+        name: document.getElementById('qname').value,
+        email: document.getElementById('qemail').value,
+        phone: document.getElementById('qphone').value,
+        service: document.getElementById('qservice').value,
+        message: document.getElementById('qmessage').value,
+      };
+
+      submitBtn.innerText = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        console.log('=== QUOTE FORM SUBMISSION START ===');
+        console.log('Form Data:', formData);
+        
+        const response = await fetch(`${API_BASE}/api/submit-quote`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        console.log('Quote Response Status:', response.status);
+        console.log('Quote Response OK:', response.ok);
+        console.log('Quote Response Headers:', [...response.headers.entries()]);
+        
+        // === FIX: Use response.json() (avoid manual JSON.parse of text) ===
+        let data;
+        try {
+          data = await response.json();
+          console.log('Quote Parsed Data:', data);
+        } catch (parseError) {
+          console.error('Failed to parse response as JSON:', parseError);
+          // If parsing fails but response.ok is true, consider success (rare case)
+          if (response.ok) {
+            alert("✅ Quote Request Submitted Successfully! Our team will contact you shortly.");
+            this.reset();
+            closeModal('bookModalBackdrop');
+            return;
+          }
+          throw new Error('Server returned invalid response');
+        }
+
+        console.log('Checking: response.ok =', response.ok, '&& data.success =', data.success);
+
+        // Treat any 2xx response as success; if backend returns data.success explicitly, respect it.
+        if (response.ok && (data.success === undefined || data.success === true)) {
+          console.log('SUCCESS DETECTED!');
+          alert("✅ Quote Request Submitted Successfully! Our team will contact you shortly.");
+          
+          // Analytics
+          if(window._wekasafeAnalytics) {
+            _wekasafeAnalytics('event','quote_submit', {
+              service: formData.service
+            });
+          }
+          
+          this.reset();
+          closeModal('bookModalBackdrop');
+        } else {
+          console.error('Quote submission failed - response.ok:', response.ok, 'data.success:', data.success);
+          console.error('Full data object:', data);
+          throw new Error(data.detail || data.message || 'Submission failed');
+        }
+      } catch(err) {
+        console.error('=== QUOTE SUBMISSION ERROR ===');
+        console.error('Error type:', err.constructor.name);
+        console.error('Error message:', err.message);
+        console.error('Error stack:', err.stack);
+        alert('⚠️ Error submitting quote. Please try again or contact us directly at info@wekasafe.com');
+      } finally {
+        submitBtn.innerText = original;
+        submitBtn.disabled = false;
+      }
+    });
+    
+    // Incident Form Submission Logic
+    document.getElementById('incidentForm')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const original = submitBtn.innerText;
+      
+      submitBtn.innerText = 'Submitting...';
+      submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData();
+        
+        // --- FIX: send ISO 8601 UTC timestamp to avoid timezone parsing issues ---
+        const isoUtc = new Date().toISOString();
+        formData.append('datetime_field', isoUtc);
+
+        formData.append('incident_type', 'General Incident');
+        
+        // Fix file parameter - backend expects 'files' (plural)
+        const filesInput = document.getElementById('incidentAttachment');
+        if (filesInput && filesInput.files && filesInput.files.length > 0) {
+          // support multiple files
+          for (let i = 0; i < filesInput.files.length; i++) {
+            formData.append('files', filesInput.files[i]);
+          }
+        }
+
+        // append other fields
+        formData.append('reporter_name', document.getElementById('incidentName').value || '');
+        formData.append('contact', document.getElementById('incidentEmail').value || '');
+        formData.append('location', document.getElementById('incidentLocation').value || '');
+        formData.append('severity', document.getElementById('incidentSeverity').value || '');
+        formData.append('description', document.getElementById('incidentDetails').value || '');
+
+        const response = await fetch(`${API_BASE}/api/incident-report`, {
+          method: 'POST',
+          body: formData
+        });
+
+        console.log('Incident Response Status:', response.status, 'OK:', response.ok);
+        
+        let data;
+        try {
+          data = await response.json();
+        } catch(parseErr) {
+          console.error('Failed to parse incident response JSON:', parseErr);
+          if (response.ok) {
+            // If backend returned empty body but status is OK, treat as success
+            alert('✅ Incident Report Submitted Successfully! A confirmation has been sent if you provided an email.');
+            this.reset();
+            closeModal('reportModalBackdrop');
+            return;
+          }
+          throw parseErr;
+        }
+
+        console.log('Incident Response Data:', data);
+
+        if (response.ok && (data.success === undefined || data.success === true)) {
+          alert(`✅ Incident Report Submitted Successfully!\n\nYour Reference ID: ${data.reference || 'N/A'}\n\nPlease save this reference number for tracking. A confirmation email has been sent.`);
+
+          // Analytics
+          if(window._wekasafeAnalytics) {
+            _wekasafeAnalytics('event','incident_submit',{
+              severity: document.getElementById('incidentSeverity').value
+            });
+          }
+          
+          this.reset();
+          closeModal('reportModalBackdrop');
+        } else {
+          console.error('Incident submission failed:', data);
+          throw new Error(data.detail || data.message || 'Submission failed');
+        }
+      } catch(err) {
+        console.error('Incident report error:', err);
+        alert('⚠️ Error submitting report. Please try again or contact us directly at info@wekasafe.com');
+      } finally {
+        submitBtn.innerText = original; 
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Handle button inside quote form to open privacy modal (updated to use new ID)
+    document.getElementById('viewPrivacyFromQuote')?.addEventListener('click', () => {
+      closeModal('bookModalBackdrop'); // Use the specific book modal backdrop ID
+      showModal('privacyModal'); // privacyModal targets #privacyModalBackdrop
+    });
+
+    // Handle button inside footer/anywhere to open privacy modal
+    document.querySelectorAll('[data-open-modal="privacyModal"]').forEach(button => {
+        button.addEventListener('click', () => {
+            showModal('privacyModal');
+        });
+    });
+
+    
+    // --- MOBILE MENU TOGGLE (Simple JS to handle mobile navigation) ---
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileToggle.addEventListener('click', () => {
+        const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        
+        if (!isExpanded) {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '80px';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            // Update mobile menu bg for new theme
+            navLinks.style.background = '#064e3b'; 
+            navLinks.style.padding = '1.5rem';
+            navLinks.style.borderTop = '1px solid rgba(255,255,255,0.1)';
+        } else {
+            navLinks.style.display = 'none';
+        }
+    });
+
+        // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                navLinks.style.display = 'none';
+            }
+        });
+    });
+
+  </script>
+</body>
+</html>
