@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Training - WekaSafe</title>
+    <style>
+        /* Reuse styles from environmental.html for consistency */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: white; color: #1f2937; }
+        nav { position: fixed; width: 100%; z-index: 1000; background: #064e3b; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; color: #f97316; text-decoration: none; }
+        .back-btn { padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; color: #d1d5db; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .back-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+
+        .page-header { padding: 8rem 2rem 4rem; text-align: center; background: linear-gradient(to bottom, rgba(249, 115, 22, 0.1), white); }
+        .page-header h1 { font-size: 3rem; margin-bottom: 1rem; color: #f97316; }
+        .page-header p { font-size: 1.25rem; color: #6b7280; max-width: 800px; margin: 0 auto; }
+
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .course-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 2rem; transition: transform 0.3s; }
+        .course-card:hover { transform: translateY(-5px); border-color: #f97316; }
+        .course-card h3 { color: #1f2937; margin-bottom: 1rem; font-size: 1.5rem; }
+        .course-card p { color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6; }
+        
+        .duration-badge { display: inline-block; padding: 4px 12px; background: rgba(249, 115, 22, 0.2); color: #f97316; border-radius: 4px; font-size: 0.8rem; margin-bottom: 1rem; }
+
+        .cta-box { text-align: center; padding: 4rem 2rem; background: #f3f4f6; margin-top: 4rem; }
+        .btn-primary { padding: 1rem 2rem; background: #f97316; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; }
+        
+        footer { text-align: center; padding: 2rem; background: #064e3b; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer p { color: #d1d5db; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">WekaSafe</a>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Safety Training Courses</h1>
+        <p>Equip your workforce with the skills to prevent accidents and save lives. All our courses are DOSH-approved and include certification.</p>
+    </header>
+
+    <main class="course-grid">
+        <div class="course-card">
+            <span class="duration-badge">1 Day Course</span>
+            <h3>Fire Safety & Marshalling</h3>
+            <p>Participants learn the chemistry of fire, how to use different extinguishers, and evacuation procedures. Includes practical live-fire drills.</p>
+            <ul style="color:#374151; list-style-position: inside; margin-bottom:1rem;">
+                <li>Fire Triangle & Classes</li>
+                <li>Extinguisher Operation (PASS)</li>
+                <li>Evacuation Coordination</li>
+            </ul>
+        </div>
+
+        <div class="course-card">
+            <span class="duration-badge">2 Day Course</span>
+            <h3>First Aid & BLS</h3>
+            <p>Comprehensive training on handling medical emergencies at the workplace. Covers CPR, bleeding control, fracture management, and shock.</p>
+            <ul style="color:#374151; list-style-position: inside; margin-bottom:1rem;">
+                <li>CPR & AED Usage</li>
+                <li>Choking & Airway Management</li>
+                <li>Bandaging & Splinting</li>
+            </ul>
+        </div>
+
+        <div class="course-card">
+            <span class="duration-badge">3 Day Course</span>
+            <h3>Occupational Health & Safety</h3>
+            <p>Designed for safety committee members. Learn how to identify hazards, conduct risk assessments, and maintain legal compliance.</p>
+            <ul style="color:#374151; list-style-position: inside; margin-bottom:1rem;">
+                <li>Legal Framework (OSHA 2007)</li>
+                <li>Risk Assessment Matrix</li>
+                <li>Accident Investigation</li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="cta-box">
+        <h2 style="color:#1f2937; margin-bottom: 1rem;">Train Your Team Today</h2>
+        <p style="color:#6b7280; margin-bottom: 2rem;">We offer on-site training at your premises or at our training center.</p>
+        <a href="index.html#contact" class="btn-primary">Book a Training Session</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 WekaSafe Solutions.</p>
+    </footer>
+</body>
+</html>

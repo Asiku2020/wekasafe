@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Reports - WekaSafe Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a5f3f 0%, #0d3a26 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-download {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-back {
+            background: white;
+            color: #1a5f3f;
+        }
+        
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .stats-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a5f3f;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .incidents-table-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .table-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .table-header h2 {
+            color: #1a5f3f;
+            font-size: 22px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #f8f9fa;
+        }
+        
+        th {
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        
+        tbody tr {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .reference {
+            font-weight: 700;
+            color: #1a5f3f;
+            font-family: monospace;
+        }
+        
+        .severity-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .severity-critical { background: #dc3545; color: white; }
+        .severity-high { background: #fd7e14; color: white; }
+        .severity-medium { background: #ffc107; color: #333; }
+        .severity-low { background: #28a745; color: white; }
+        .severity-minor { background: #17a2b8; color: white; }
+        .severity-serious { background: #dc3545; color: white; }
+        .severity-near-miss { background: #6c757d; color: white; }
+        .severity-safety-concern { background: #ffc107; color: #333; }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .status-resolved { background: #28a745; color: white; }
+        .status-pending { background: #ffc107; color: #333; }
+        
+        .timestamp {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .description-preview {
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .no-incidents {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        
+        .no-incidents-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+        
+        .view-btn {
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .view-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(26, 95, 63, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>⚠️ Incident Reports</h1>
+                <p>Manage and track safety incidents</p>
+            </div>
+            <div class="header-actions">
+                <a href="/admin/dashboard" class="btn btn-back">
+                    ← Back to Dashboard
+                </a>
+                <button onclick="downloadCSV()" class="btn btn-download">
+                    📥 Download CSV
+                </button>
+            </div>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">{{ incidents|length }}</div>
+                <div class="stat-label">Total Incidents</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ incidents|selectattr('resolved', 'equalto', False)|list|length }}</div>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ incidents|selectattr('resolved', 'equalto', True)|list|length }}</div>
+                <div class="stat-label">Resolved</div>
+            </div>
+        </div>
+        
+        <div class="incidents-table-container">
+            <div class="table-header">
+                <h2>All Incident Reports</h2>
+            </div>
+            
+            {% if incidents %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reference</th>
+                        <th>Reporter</th>
+                        <th>Location</th>
+                        <th>Severity</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for incident in incidents %}
+                    <tr onclick="window.location.href='/admin/incident/{{ incident.id }}'">
+                        <td>
+                            <span class="reference">{{ incident.reference }}</span>
+                        </td>
+                        <td>
+                            <strong>{{ incident.reporter_name or 'Anonymous' }}</strong>
+                            {% if incident.contact %}
+                            <div style="font-size: 12px; color: #666;">{{ incident.contact }}</div>
+                            {% endif %}
+                        </td>
+                        <td>{{ incident.location }}</td>
+                        <td>
+                            <span class="severity-badge severity-{{ incident.severity.lower().replace(' ', '-') if incident.severity else 'unknown' }}">
+                                {{ incident.severity or 'Unknown' }}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="description-preview" title="{{ incident.description }}">
+                                {{ incident.description or '—' }}
+                            </div>
+                        </td>
+                        <td>
+                            {% if incident.resolved %}
+                            <span class="status-badge status-resolved">✓ Resolved</span>
+                            {% else %}
+                            <span class="status-badge status-pending">⏳ Pending</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span class="timestamp">
+                                {{ incident.timestamp.strftime('%Y-%m-%d %H:%M') if incident.timestamp else 'N/A' }}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="/admin/incident/{{ incident.id }}" class="view-btn" onclick="event.stopPropagation()">
+                                View Details
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="no-incidents">
+                <div class="no-incidents-icon">⚠️</div>
+                <h3>No Incident Reports Yet</h3>
+                <p>Incident reports will appear here when they are submitted.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        async function downloadCSV() {
+            try {
+                const response = await fetch('/admin/export/incidents', {
+                    method: 'GET',
+                    credentials: 'include' // Include cookies for authentication
+                });
+                
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        alert('Session expired. Please login again.');
+                        window.location.href = '/admin/login';
+                        return;
+                    }
+                    throw new Error('Download failed');
+                }
+                
+                // Get the CSV content
+                const blob = await response.blob();
+                
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'incidents_' + new Date().toISOString().split('T')[0] + '.csv';
+                document.body.appendChild(a);
+                a.click();
+                
+                // Cleanup
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Failed to download CSV. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

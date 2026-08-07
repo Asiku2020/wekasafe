@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Admin Account - WekaSafe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a5f3f 0%, #0d3a26 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .setup-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 500px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .setup-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a5f3f 0%, #ff6b35 100%);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(26, 95, 63, 0.3);
+        }
+        
+        .logo h1 {
+            color: #1a5f3f;
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe5a0 100%);
+            border-left: 4px solid #ff6b35;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .info-box h3 {
+            color: #ff6b35;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .info-box p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1a5f3f;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(26, 95, 63, 0.1);
+        }
+        
+        .password-hint {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        .success-message {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #28a745;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .error-message {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1a5f3f 0%, #26854f 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(26, 95, 63, 0.3);
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(26, 95, 63, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .login-link a {
+            color: #1a5f3f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .login-link a:hover {
+            color: #ff6b35;
+        }
+        
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <div class="logo">
+            <div class="logo-icon">W</div>
+            <h1>WekaSafe Setup</h1>
+            <p>Create Your Admin Account</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Important Notice</h3>
+            <p>This is a one-time setup. After creating your admin account, this page will be disabled for security reasons.</p>
+        </div>
+        
+        <div id="successMessage" class="success-message">
+            <strong>✓ Success!</strong> Your admin account has been created. Redirecting to login...
+        </div>
+        
+        <div id="errorMessage" class="error-message"></div>
+        
+        <form id="setupForm">
+            <div class="form-group">
+                <label for="email">Admin Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="admin@wekasafe.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Admin Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter a secure password">
+                <div class="password-hint">Must be at least 8 characters long</div>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">Create Admin Account</button>
+        </form>
+        
+        <div class="login-link" id="loginLink" style="display: none;">
+            <p>Account created successfully! <a href="/admin/login">Click here to login</a></p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2026 WekaSafe Solutions. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('setupForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginLink = document.getElementById('loginLink');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating Account...';
+            
+            // Hide previous messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+            
+            // Get form data
+            const formData = new FormData();
+            formData.append('email', document.getElementById('email').value);
+            formData.append('password', document.getElementById('password').value);
+            
+            try {
+                const response = await fetch('/admin/setup', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Success
+                    successMessage.classList.add('show');
+                    form.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    
+                    // Redirect to login after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = '/admin/login';
+                    }, 3000);
+                } else {
+                    // Error
+                    errorMessage.textContent = data.detail || 'Failed to create account. Please try again.';
+                    errorMessage.classList.add('show');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Create Admin Account';
+                }
+            } catch (error) {
+                errorMessage.textContent = 'Network error. Please check your connection and try again.';
+                errorMessage.classList.add('show');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Create Admin Account';
+            }
+        });
+    </script>
+</body>
+</html>
