@@ -1,0 +1,14 @@
+/* simple admin styles */
+:root{--primary:#0b6b5b}
+body{font-family:Inter,Arial,Helvetica,sans-serif;margin:0;background:#f6f7fb;color:#111}
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--primary);color:#fff}
+.container{max-width:1100px;margin:1.25rem auto;padding:1rem}
+.centered{max-width:420px;margin:6rem auto;padding:2rem;background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+form label{display:block;margin-top:0.75rem;color:#666}
+input{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:6px;margin-top:.25rem}
+button{margin-top:1rem;padding:.6rem 1rem;background:var(--primary);color:#fff;border:0;border-radius:6px;cursor:pointer}
+.cards{display:flex;gap:1rem;padding:1rem}
+.card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.04);flex:1;text-align:center}
+.table{width:100%;border-collapse:collapse;background:#fff}
+.table th,.table td{padding:.6rem;border-bottom:1px solid #eee}
+.alert{background:#fee2e2;color:#6b0000;padding:.5rem;border-radius:6px}
