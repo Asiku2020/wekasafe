@@ -144,7 +144,7 @@ Request Details:
 - Email: {payload.email}
 - Reference ID: QT-{quote.id:06d}
 
-If you have any urgent questions, please call us at +256 700 123 456.
+If you have any urgent questions, please call us at +256 394 823 579.
 
 Best regards,
 WekaSafe Solutions Team
@@ -179,7 +179,7 @@ View in admin panel: {BASE_URL}/admin/dashboard
 Quote ID: {quote.id}
 Submitted: {quote.timestamp}
 """
-        admin_email = os.getenv("ADMIN_EMAIL", "info@wekasafe.com")
+        admin_email = os.getenv("ADMIN_EMAIL", "wekasafesolutions@gmail.com")
         send_email(admin_email, admin_subject, admin_body)
     except Exception as e:
         print(f"Failed to send admin notification: {e}")
@@ -262,7 +262,7 @@ Report Details:
 - Attachments: {len(saved_files)} file(s)
 
 Our safety team will investigate this incident and take appropriate action. 
-If immediate action is required, please contact us at +256 700 123 456.
+If immediate action is required, please contact us at +256 394 823 579S.
 
 All incident reports are treated as confidential and handled in accordance 
 with our privacy policy.
@@ -304,7 +304,7 @@ View details: {BASE_URL}/admin/dashboard
 Incident ID: {inc.id}
 Submitted: {inc.timestamp}
 """
-        admin_email = os.getenv("ADMIN_EMAIL", "info@wekasafe.com")
+        admin_email = os.getenv("ADMIN_EMAIL", "wekasafesolutions@gmail.com")
         send_email(admin_email, admin_subject, admin_body)
     except Exception as e:
         print(f"Failed to send admin notification: {e}")
