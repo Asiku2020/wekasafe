@@ -64,6 +64,7 @@ def send_email(to_email: str, subject: str, body: str):
     """
     host = os.getenv("MAIL_HOST")
     if not host:
+        print("Email error: MAIL_HOST is not set - email not sent")
         return False
     
     try:

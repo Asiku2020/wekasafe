@@ -154,7 +154,8 @@ Safety & Compliance Made Simple
 This is an automated confirmation. Please do not reply to this email.
 Visit: {BASE_URL}
 """
-        send_email(payload.email, customer_subject, customer_body)
+        if not send_email(payload.email, customer_subject, customer_body):
+            print(f"Failed to send customer email to {payload.email} (see Email error above)")
     except Exception as e:
         print(f"Failed to send customer email: {e}")
     
@@ -180,7 +181,8 @@ Quote ID: {quote.id}
 Submitted: {quote.timestamp}
 """
         admin_email = os.getenv("ADMIN_EMAIL", "wekasafesolutions@gmail.com")
-        send_email(admin_email, admin_subject, admin_body)
+        if not send_email(admin_email, admin_subject, admin_body):
+            print(f"Failed to send admin email to {admin_email} (see Email error above)")
     except Exception as e:
         print(f"Failed to send admin notification: {e}")
     
@@ -273,7 +275,8 @@ WekaSafe Solutions Safety Team
 ---
 This is an automated confirmation. Please do not reply to this email.
 """
-            send_email(contact, reporter_subject, reporter_body)
+            if not send_email(contact, reporter_subject, reporter_body):
+                print(f"Failed to send reporter confirmation to {contact} (see Email error above)")
         except Exception as e:
             print(f"Failed to send reporter confirmation: {e}")
     
@@ -305,7 +308,8 @@ Incident ID: {inc.id}
 Submitted: {inc.timestamp}
 """
         admin_email = os.getenv("ADMIN_EMAIL", "wekasafesolutions@gmail.com")
-        send_email(admin_email, admin_subject, admin_body)
+        if not send_email(admin_email, admin_subject, admin_body):
+            print(f"Failed to send admin email to {admin_email} (see Email error above)")
     except Exception as e:
         print(f"Failed to send admin notification: {e}")
     
