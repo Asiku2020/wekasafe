@@ -14,3 +14,4 @@ itsdangerous==2.2.0
 fastapi-mail
 httpx==0.28.1
 psycopg2-binary
+resend==2.4.0
